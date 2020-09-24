@@ -30,6 +30,14 @@ class SpecialtiesViewModel(
         getSpecialties()
     }
 
+    fun refreshData() {
+        getSpecialties()
+    }
+
+    fun onClickSpecialty(id: Long) {
+        eventsDispatcher.dispatchEvent { navigateToEmployees(id) }
+    }
+
     private fun getSpecialties() {
         viewModelScope.launch {
             when (val response = rep.getSpecialties()) {
@@ -41,9 +49,5 @@ class SpecialtiesViewModel(
                 }
             }
         }
-    }
-
-    fun onClickSpecialty(id: Long) {
-        eventsDispatcher.dispatchEvent { navigateToEmployees(id) }
     }
 }

@@ -9,9 +9,17 @@
             type="ru.modelov.testapp65apps.listspecialties.presentation.SpecialtiesViewModel" />
     </data>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_specialties"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        app:onRefresh="@{viewModel::refreshData}">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_specialties"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 </layout>
