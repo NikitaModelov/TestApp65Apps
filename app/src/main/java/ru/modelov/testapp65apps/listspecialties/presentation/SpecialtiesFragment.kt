@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.observe
+import androidx.navigation.fragment.findNavController
 import org.koin.android.viewmodel.ext.android.viewModel
 import ru.modelov.testapp65apps.R
 import ru.modelov.testapp65apps.databinding.SpecialtiesFragmentBinding
@@ -12,8 +13,8 @@ import ru.modelov.testapp65apps.listspecialties.presentation.recycleview.Special
 import ru.modelov.testapp65apps.listspecialties.presentation.recycleview.SpecialtiesItemsDecoration
 import ru.modelov.testapp65apps.main.presentation.BaseFragment
 
-class SpecialtiesFragment :
-    BaseFragment<SpecialtiesFragmentBinding>(R.layout.specialties_fragment) {
+class SpecialtiesFragment : BaseFragment<SpecialtiesFragmentBinding>(R.layout.specialties_fragment),
+    SpecialtiesViewModel.EventsListener {
 
     private val viewModel: SpecialtiesViewModel by viewModel()
 
@@ -24,7 +25,7 @@ class SpecialtiesFragment :
     ): View? {
         val view = super.onCreateView(inflater, container, savedInstanceState)
         binding.viewModel = viewModel
-
+        viewModel.eventsDispatcher.bind(viewLifecycleOwner, this)
         initRv()
 
         return view
@@ -38,5 +39,9 @@ class SpecialtiesFragment :
         viewModel.specialtiesLiveData.observe(viewLifecycleOwner) {
             adapter.submitList(it)
         }
+    }
+
+    override fun navigateToEmployees(id: Long) {
+        findNavController().navigate(R.id.action_specialties_to_employees)
     }
 }
