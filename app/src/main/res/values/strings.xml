@@ -1,3 +1,4 @@
 <resources>
 	<string name="app_name">TestApp65Apps</string>
+    <string name="employees_age">Возвраст: %s</string>
 </resources>

@@ -24,13 +24,8 @@ class EmployeesViewModel(
     val employeesLiveData: LiveData<Employees>
         get() = _employeesLiveData
 
-    private val _test = MutableLiveData<String>()
-    val test: LiveData<String>
-        get() = _test
-
     init {
-        _test.value = idSpecialty.toString()
-        //getEmployees(idSpecialty)
+        getEmployees(idSpecialty)
     }
 
     private fun getEmployees(id: Long) {

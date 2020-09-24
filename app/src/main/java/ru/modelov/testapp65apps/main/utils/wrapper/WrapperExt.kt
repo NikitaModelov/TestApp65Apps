@@ -1,9 +1,7 @@
 package ru.modelov.testapp65apps.main.utils.wrapper
 
-import ru.modelov.testapp65apps.main.entities.Employees
-import ru.modelov.testapp65apps.main.entities.MyResponse
-import ru.modelov.testapp65apps.main.entities.Specialties
-import ru.modelov.testapp65apps.main.entities.Specialty
+import ru.modelov.testapp65apps.main.entities.*
+import ru.modelov.testapp65apps.main.utils.toUpperCaseFirstSymbol
 
 fun MyResponse.getSpecialties(): Specialties {
     val specialties = mutableSetOf<Specialty>()
@@ -13,15 +11,25 @@ fun MyResponse.getSpecialties(): Specialties {
     return specialties.toList()
 }
 
-fun MyResponse.getEmployees(idSpecialty: Long): Employees = this.response.filter {
-    isContainsSpecialty(it.specialty, idSpecialty)
+fun MyResponse.getEmployees(idSpecialty: Long): Employees {
+    val employees = this.response
+    val result = mutableListOf<Employee>()
+    employees.forEach { emp ->
+        emp.specialty.getSpecialtyById(idSpecialty).let {
+            if (emp.specialty.contains(it))
+                result.add(emp)
+        }
+    }
+    result.map {
+        it.lastName = it.lastName.toUpperCaseFirstSymbol()
+        it.firstName = it.firstName.toUpperCaseFirstSymbol()
+    }.toList()
+    return result
 }
 
-fun Specialties.getSpecialtyById(id: Long): Specialty =
-    this.single {
-        it.specialtyId == id
+private fun Specialties.getSpecialtyById(id: Long): Specialty? {
+    this.forEach {
+        if (it.specialtyId == id) return it
     }
-
-private fun isContainsSpecialty(specialties: Specialties, idSpecialty: Long): Boolean =
-    specialties.contains(specialties.getSpecialtyById(idSpecialty))
-
+    return null
+}

@@ -4,11 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.observe
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 import ru.modelov.testapp65apps.R
 import ru.modelov.testapp65apps.databinding.EmployeesFragmentBinding
+import ru.modelov.testapp65apps.listemployees.presentation.recycleview.EmployeesAdapter
 import ru.modelov.testapp65apps.main.presentation.BaseFragment
+import ru.modelov.testapp65apps.main.presentation.decoration.ItemsDecoration
 
 class EmployeesFragment : BaseFragment<EmployeesFragmentBinding>(R.layout.employees_fragment),
     EmployeesViewModel.EventsListener {
@@ -28,18 +31,18 @@ class EmployeesFragment : BaseFragment<EmployeesFragmentBinding>(R.layout.employ
 
         binding.viewModel = viewModel
         viewModel.eventsDispatcher.bind(viewLifecycleOwner, this)
-        //initRv()
+        initRv()
 
         return view
     }
 
-    /*private fun initRv() {
-        val adapter = SpecialtiesAdapter(viewModel)
+    private fun initRv() {
+        val adapter = EmployeesAdapter(viewModel)
         binding.rvEmployees.adapter = adapter
-        binding.rvEmployees.addItemDecoration(SpecialtiesItemsDecoration(24))
+        binding.rvEmployees.addItemDecoration(ItemsDecoration(24))
 
-        viewModel.specialtiesLiveData.observe(viewLifecycleOwner) {
+        viewModel.employeesLiveData.observe(viewLifecycleOwner) {
             adapter.submitList(it)
         }
-    }*/
+    }
 }

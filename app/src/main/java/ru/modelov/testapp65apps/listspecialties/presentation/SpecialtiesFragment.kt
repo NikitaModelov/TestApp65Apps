@@ -11,8 +11,8 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.modelov.testapp65apps.R
 import ru.modelov.testapp65apps.databinding.SpecialtiesFragmentBinding
 import ru.modelov.testapp65apps.listspecialties.presentation.recycleview.SpecialtiesAdapter
-import ru.modelov.testapp65apps.listspecialties.presentation.recycleview.SpecialtiesItemsDecoration
 import ru.modelov.testapp65apps.main.presentation.BaseFragment
+import ru.modelov.testapp65apps.main.presentation.decoration.ItemsDecoration
 
 class SpecialtiesFragment : BaseFragment<SpecialtiesFragmentBinding>(R.layout.specialties_fragment),
     SpecialtiesViewModel.EventsListener {
@@ -35,7 +35,11 @@ class SpecialtiesFragment : BaseFragment<SpecialtiesFragmentBinding>(R.layout.sp
     private fun initRv() {
         val adapter = SpecialtiesAdapter(viewModel)
         binding.rvSpecialties.adapter = adapter
-        binding.rvSpecialties.addItemDecoration(SpecialtiesItemsDecoration(24))
+        binding.rvSpecialties.addItemDecoration(
+            ItemsDecoration(
+                24
+            )
+        )
 
         viewModel.specialtiesLiveData.observe(viewLifecycleOwner) {
             adapter.submitList(it)

@@ -1,10 +1,10 @@
-package ru.modelov.testapp65apps.listspecialties.presentation.recycleview
+package ru.modelov.testapp65apps.main.presentation.decoration
 
 import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
-class SpecialtiesItemsDecoration(private val space: Int = 8) : RecyclerView.ItemDecoration() {
+class ItemsDecoration(private val space: Int = 8) : RecyclerView.ItemDecoration() {
 
     override fun getItemOffsets(
         outRect: Rect,
