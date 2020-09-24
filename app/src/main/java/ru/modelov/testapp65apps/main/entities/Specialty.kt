@@ -10,7 +10,7 @@ typealias Specialties = List<Specialty>
 data class Specialty(
     @PrimaryKey
     @SerializedName("specialty_id")
-    val specialtyId: Int,
+    val specialtyId: Long,
 
     @SerializedName("name")
     val name: String
