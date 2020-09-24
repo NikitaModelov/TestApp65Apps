@@ -4,9 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.lifecycle.observe
 import androidx.navigation.fragment.findNavController
-import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.modelov.testapp65apps.R
 import ru.modelov.testapp65apps.databinding.SpecialtiesFragmentBinding
 import ru.modelov.testapp65apps.listspecialties.presentation.recycleview.SpecialtiesAdapter
@@ -42,6 +43,9 @@ class SpecialtiesFragment : BaseFragment<SpecialtiesFragmentBinding>(R.layout.sp
     }
 
     override fun navigateToEmployees(id: Long) {
-        findNavController().navigate(R.id.action_specialties_to_employees)
+        findNavController().navigate(
+            R.id.action_specialties_to_employees,
+            bundleOf("ID_SPECIALTY" to id)
+        )
     }
 }

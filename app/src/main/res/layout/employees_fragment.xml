@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:gravity="center"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="ru.modelov.testapp65apps.listemployees.presentation.EmployeesViewModel" />
+    </data>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-        android:text="Привет кiт"/>
+        android:text="@{viewModel.test}"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
 
-</LinearLayout>
+    <!-- <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent">
+
+         <androidx.recyclerview.widget.RecyclerView
+             android:id="@+id/rv_employees"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
+</layout>
