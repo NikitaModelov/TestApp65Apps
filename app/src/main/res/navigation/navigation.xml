@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navogation"
+    app:startDestination="@id/specialtiesFragment">
+
+    <fragment
+        android:id="@+id/specialtiesFragment"
+        android:name="ru.modelov.testapp65apps.listspecialties.presentation.SpecialtiesFragment"
+        android:label="SpecialtiesFragment">
+        <action
+            android:id="@+id/action_specialties_to_employees"
+            app:destination="@id/employeesFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/employeesFragment"
+        android:name="ru.modelov.testapp65apps.listemployees.presentation.EmployeesFragment"
+        android:label="EmployeesFragment" />
+</navigation>
