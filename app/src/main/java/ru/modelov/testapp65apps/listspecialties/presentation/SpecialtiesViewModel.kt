@@ -12,8 +12,7 @@ class SpecialtiesViewModel(private val rep: SpecialtiesRepository) : ViewModel()
 
     fun getSpecialties() {
         viewModelScope.launch {
-            val response = rep.getSpecialties()
-            when(response) {
+            when (val response = rep.getSpecialties()) {
                 is Result.Success -> {
                     Log.d("VM", "${response.data.response}")
                 }

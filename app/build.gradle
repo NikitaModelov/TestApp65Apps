@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
 	compileSdkVersion 30
@@ -61,4 +62,7 @@ dependencies {
 	implementation "org.koin:koin-androidx-viewmodel:2.1.6"
 	implementation "org.koin:koin-androidx-fragment:2.1.6"
 
+	implementation "androidx.room:room-runtime:2.2.5"
+	implementation "androidx.room:room-ktx:2.2.5"
+	kapt "androidx.room:room-compiler:2.2.5"
 }
