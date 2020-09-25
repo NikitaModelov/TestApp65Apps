@@ -13,7 +13,7 @@ import ru.modelov.testapp65apps.main.utils.converter.ConverterDate.getAge
 
 @BindingAdapter("setAge")
 fun TextView.setAge(birthday: String?) {
-    text = getAge(birthday)
+    text = "${resources.getString(R.string.employees_age)} ${getAge(birthday)}"
 }
 
 @BindingAdapter("setPhoto")
