@@ -5,8 +5,10 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import ru.modelov.testapp65apps.listspecialties.data.api.SpecialtiesApi
 import ru.modelov.testapp65apps.listspecialties.data.database.SpecialtiesDatabase
-import ru.modelov.testapp65apps.listspecialties.data.datasource.SpecialtiesDataSource
+import ru.modelov.testapp65apps.listspecialties.data.datasource.SpecialtiesLocalDataSource
+import ru.modelov.testapp65apps.listspecialties.data.datasource.SpecialtiesLocalDataSourceImpl
 import ru.modelov.testapp65apps.listspecialties.data.datasource.SpecialtiesRemoteDataSource
+import ru.modelov.testapp65apps.listspecialties.data.datasource.SpecialtiesRemoteDataSourceImpl
 import ru.modelov.testapp65apps.listspecialties.data.repository.SpecialtiesRepositoryImpl
 import ru.modelov.testapp65apps.listspecialties.domain.repository.SpecialtiesRepository
 import ru.modelov.testapp65apps.listspecialties.presentation.SpecialtiesViewModel
@@ -23,14 +25,19 @@ private val viewModelModule = module {
 private val repositoryModule = module {
     factory<SpecialtiesRepository> {
         SpecialtiesRepositoryImpl(
-            get()
+            get(), get()
         )
     }
 }
 
 private val dataSourceModule = module {
-    single<SpecialtiesDataSource> {
-        SpecialtiesRemoteDataSource(
+    single<SpecialtiesRemoteDataSource> {
+        SpecialtiesRemoteDataSourceImpl(
+            get()
+        )
+    }
+    single<SpecialtiesLocalDataSource> {
+        SpecialtiesLocalDataSourceImpl(
             get()
         )
     }
