@@ -2,6 +2,7 @@ package ru.modelov.testapp65apps.listspecialties.presentation.bindingadapter
 
 import android.view.View
 import android.widget.FrameLayout
+import android.widget.LinearLayout
 import androidx.databinding.BindingAdapter
 import ru.modelov.testapp65apps.listspecialties.presentation.uistate.SpecialtiesUiState
 
@@ -15,7 +16,7 @@ fun FrameLayout.setUiState(state: SpecialtiesUiState) {
 }
 
 @BindingAdapter("uiStateError")
-fun View.setUiState(state: SpecialtiesUiState) {
+fun LinearLayout.setUiStateError(state: SpecialtiesUiState) {
     visibility = when (state) {
         is SpecialtiesUiState.Success -> {
             View.GONE

@@ -1,6 +1,5 @@
 package ru.modelov.testapp65apps.listspecialties.presentation
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -52,7 +51,6 @@ class SpecialtiesViewModel(
                     _uiStateLiveData.value = SpecialtiesUiState.Success
                 }
                 is Result.Error -> {
-                    Log.d("VM", "${response.exception}")
                     _uiStateLiveData.value = SpecialtiesUiState.Error("Ошибка загрузки данных")
                 }
             }

@@ -6,10 +6,13 @@ import java.io.IOException
 suspend fun <T : Any> safeApiCall(
     call: suspend () -> Response<T>
 ): Result<T> {
-    val response = call.invoke()
-    if (response.isSuccessful) return Result.Success(response.body()!!)
-
-    return Result.Error(IOException("Error Occurred during getting safe Api result, Custom ERROR - ${response.errorBody()}"))
+    try {
+        val response = call.invoke()
+        if (response.isSuccessful) return Result.Success(response.body()!!)
+        return Result.Error(IOException("Error Occurred during getting safe Api result, Custom ERROR - ${response.errorBody()}"))
+    } catch (ex: IOException) {
+        return Result.Error(ex)
+    }
 }
 
 suspend fun <T : Any> safeDatabaseCall(
