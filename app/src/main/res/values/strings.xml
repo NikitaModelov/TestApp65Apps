@@ -1,4 +1,5 @@
 <resources>
 	<string name="app_name">TestApp65Apps</string>
     <string name="employees_age">Возвраст: </string>
+    <string name="error_network">Ошибка подключения</string>
 </resources>

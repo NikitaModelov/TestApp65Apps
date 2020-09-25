@@ -1,0 +1,30 @@
+package ru.modelov.testapp65apps.listspecialties.presentation.bindingadapter
+
+import android.view.View
+import android.widget.FrameLayout
+import androidx.databinding.BindingAdapter
+import ru.modelov.testapp65apps.listspecialties.presentation.uistate.SpecialtiesUiState
+
+@BindingAdapter("uiStateLoading")
+fun FrameLayout.setUiState(state: SpecialtiesUiState) {
+    visibility = when (state) {
+        is SpecialtiesUiState.Success -> View.GONE
+        is SpecialtiesUiState.Loading -> View.VISIBLE
+        is SpecialtiesUiState.Error -> View.GONE
+    }
+}
+
+@BindingAdapter("uiStateError")
+fun View.setUiState(state: SpecialtiesUiState) {
+    visibility = when (state) {
+        is SpecialtiesUiState.Success -> {
+            View.GONE
+        }
+        is SpecialtiesUiState.Loading -> {
+            View.GONE
+        }
+        is SpecialtiesUiState.Error -> {
+            View.VISIBLE
+        }
+    }
+}
