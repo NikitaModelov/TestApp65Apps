@@ -1,10 +1,10 @@
 package ru.modelov.testapp65apps.listemployees.presentation
 
-import android.util.Log
 import androidx.lifecycle.*
 import kotlinx.coroutines.launch
 import org.koin.core.KoinComponent
 import ru.modelov.testapp65apps.listemployees.domain.usecase.GetEmployeesUseCase
+import ru.modelov.testapp65apps.listemployees.presentation.uistate.EmployeesUiState
 import ru.modelov.testapp65apps.main.entities.Employee
 import ru.modelov.testapp65apps.main.entities.Employees
 import ru.modelov.testapp65apps.main.network.Result
@@ -23,6 +23,10 @@ class EmployeesViewModel(
 
     override val eventsDispatcher: EventsDispatcher<EventsListener> = EventsDispatcher()
 
+    private val _uiStateLiveData = MutableLiveData<EmployeesUiState>(EmployeesUiState.Loading)
+    val uiStateLiveData: LiveData<EmployeesUiState>
+        get() = _uiStateLiveData
+
     private val _employeesLiveData = MutableLiveData<Employees>()
     val employeesLiveData: LiveData<Employees>
         get() = _employeesLiveData
@@ -40,10 +44,10 @@ class EmployeesViewModel(
             when (val response = getEmployeesUseCase(id)) {
                 is Result.Success -> {
                     _employeesLiveData.value = response.data
-                    Log.d("VME", "${response.data}")
+                    _uiStateLiveData.value = EmployeesUiState.Success
                 }
                 is Result.Error -> {
-                    Log.d("VM", "${response.exception}")
+                    _uiStateLiveData.value = EmployeesUiState.Error(response.exception.toString())
                 }
             }
         }
