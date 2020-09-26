@@ -3,7 +3,7 @@ package ru.modelov.testapp65apps.listspecialties.data.database
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import ru.modelov.testapp65apps.main.entities.Specialties
+import ru.modelov.testapp65apps.main.domain.entities.Specialties
 
 @Dao
 interface SpecialtyDao {

@@ -1,6 +1,6 @@
 package ru.modelov.testapp65apps.main.utils.wrapper
 
-import ru.modelov.testapp65apps.main.entities.*
+import ru.modelov.testapp65apps.main.domain.entities.*
 import ru.modelov.testapp65apps.main.utils.toUpperCaseFirstSymbol
 
 fun MyResponse.getSpecialties(): Specialties {

@@ -1,7 +1,7 @@
 package ru.modelov.testapp65apps.listemployees.data.datasource
 
 import ru.modelov.testapp65apps.listemployees.data.database.EmployeesDatabase
-import ru.modelov.testapp65apps.main.entities.Employees
+import ru.modelov.testapp65apps.main.domain.entities.Employees
 
 class EmployeesLocalDataSourceImpl(private val dataBase: EmployeesDatabase) :
     EmployeesLocalDataSource {

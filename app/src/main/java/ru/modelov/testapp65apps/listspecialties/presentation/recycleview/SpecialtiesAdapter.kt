@@ -4,7 +4,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import ru.modelov.testapp65apps.listspecialties.presentation.SpecialtiesViewModel
-import ru.modelov.testapp65apps.main.entities.Specialty
+import ru.modelov.testapp65apps.main.domain.entities.Specialty
 
 class SpecialtiesAdapter(
     private val viewModel: SpecialtiesViewModel

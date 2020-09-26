@@ -3,7 +3,7 @@ package ru.modelov.testapp65apps.listemployees.data.repository
 import ru.modelov.testapp65apps.listemployees.data.datasource.EmployeesLocalDataSource
 import ru.modelov.testapp65apps.listemployees.data.datasource.EmployeesRemoteDataSource
 import ru.modelov.testapp65apps.listemployees.domain.repository.EmployeesRepository
-import ru.modelov.testapp65apps.main.entities.Employees
+import ru.modelov.testapp65apps.main.domain.entities.Employees
 import ru.modelov.testapp65apps.main.network.Result
 import ru.modelov.testapp65apps.main.network.safeApiCall
 import ru.modelov.testapp65apps.main.network.safeDatabaseCall

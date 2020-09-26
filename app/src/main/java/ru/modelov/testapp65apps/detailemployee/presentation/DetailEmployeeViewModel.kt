@@ -3,7 +3,7 @@ package ru.modelov.testapp65apps.detailemployee.presentation
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import ru.modelov.testapp65apps.main.entities.Employee
+import ru.modelov.testapp65apps.main.domain.entities.Employee
 import ru.modelov.testapp65apps.main.presentation.EventsDispatcher
 import ru.modelov.testapp65apps.main.presentation.EventsDispatcherOwner
 

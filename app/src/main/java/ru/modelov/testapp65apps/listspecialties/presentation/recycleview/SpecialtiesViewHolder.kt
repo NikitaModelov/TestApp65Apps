@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.modelov.testapp65apps.databinding.ItemSpecialtyBinding
 import ru.modelov.testapp65apps.listspecialties.presentation.SpecialtiesViewModel
-import ru.modelov.testapp65apps.main.entities.Specialty
+import ru.modelov.testapp65apps.main.domain.entities.Specialty
 
 class SpecialtiesViewHolder private constructor(
     private val binding: ItemSpecialtyBinding

@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.modelov.testapp65apps.databinding.ItemEmployeeBinding
 import ru.modelov.testapp65apps.listemployees.presentation.EmployeesViewModel
-import ru.modelov.testapp65apps.main.entities.Employee
+import ru.modelov.testapp65apps.main.domain.entities.Employee
 
 
 class EmployeesViewHolder private constructor(

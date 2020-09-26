@@ -12,7 +12,7 @@ import org.koin.core.parameter.parametersOf
 import ru.modelov.testapp65apps.R
 import ru.modelov.testapp65apps.databinding.EmployeesFragmentBinding
 import ru.modelov.testapp65apps.listemployees.presentation.recycleview.EmployeesAdapter
-import ru.modelov.testapp65apps.main.entities.Employee
+import ru.modelov.testapp65apps.main.domain.entities.Employee
 import ru.modelov.testapp65apps.main.presentation.BaseFragment
 import ru.modelov.testapp65apps.main.presentation.decoration.ItemsDecoration
 

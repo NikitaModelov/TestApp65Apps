@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.modelov.testapp65apps.databinding.DetailEmployeeSpecialtyItemBinding
-import ru.modelov.testapp65apps.main.entities.Specialty
+import ru.modelov.testapp65apps.main.domain.entities.Specialty
 
 class DetailEmployeeViewHolder private constructor(
     private val binding: DetailEmployeeSpecialtyItemBinding

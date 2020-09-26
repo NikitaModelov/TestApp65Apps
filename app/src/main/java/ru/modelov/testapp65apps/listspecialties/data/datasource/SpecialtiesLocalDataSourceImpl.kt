@@ -1,7 +1,7 @@
 package ru.modelov.testapp65apps.listspecialties.data.datasource
 
 import ru.modelov.testapp65apps.listspecialties.data.database.SpecialtiesDatabase
-import ru.modelov.testapp65apps.main.entities.Specialties
+import ru.modelov.testapp65apps.main.domain.entities.Specialties
 
 class SpecialtiesLocalDataSourceImpl(private val database: SpecialtiesDatabase) :
     SpecialtiesLocalDataSource {

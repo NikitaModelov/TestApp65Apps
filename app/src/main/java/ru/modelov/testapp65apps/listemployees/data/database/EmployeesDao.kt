@@ -3,7 +3,7 @@ package ru.modelov.testapp65apps.listemployees.data.database
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import ru.modelov.testapp65apps.main.entities.Employees
+import ru.modelov.testapp65apps.main.domain.entities.Employees
 
 @Dao
 interface EmployeesDao {

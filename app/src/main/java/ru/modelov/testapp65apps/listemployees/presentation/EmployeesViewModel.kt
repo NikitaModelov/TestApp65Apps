@@ -5,8 +5,8 @@ import kotlinx.coroutines.launch
 import org.koin.core.KoinComponent
 import ru.modelov.testapp65apps.listemployees.domain.usecase.GetEmployeesUseCase
 import ru.modelov.testapp65apps.listemployees.presentation.uistate.EmployeesUiState
-import ru.modelov.testapp65apps.main.entities.Employee
-import ru.modelov.testapp65apps.main.entities.Employees
+import ru.modelov.testapp65apps.main.domain.entities.Employee
+import ru.modelov.testapp65apps.main.domain.entities.Employees
 import ru.modelov.testapp65apps.main.network.Result
 import ru.modelov.testapp65apps.main.presentation.EventsDispatcher
 import ru.modelov.testapp65apps.main.presentation.EventsDispatcherOwner

@@ -4,7 +4,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import ru.modelov.testapp65apps.listemployees.presentation.EmployeesViewModel
-import ru.modelov.testapp65apps.main.entities.Employee
+import ru.modelov.testapp65apps.main.domain.entities.Employee
 
 class EmployeesAdapter(
     private val viewModel: EmployeesViewModel

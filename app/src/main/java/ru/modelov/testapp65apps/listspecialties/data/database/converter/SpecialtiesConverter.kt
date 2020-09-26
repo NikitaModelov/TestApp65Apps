@@ -3,7 +3,7 @@ package ru.modelov.testapp65apps.listspecialties.data.database.converter
 import androidx.room.TypeConverter
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import ru.modelov.testapp65apps.main.entities.Specialties
+import ru.modelov.testapp65apps.main.domain.entities.Specialties
 import java.lang.reflect.Type
 
 
