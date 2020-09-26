@@ -39,6 +39,10 @@ class EmployeesViewModel(
         eventsDispatcher.dispatchEvent { navigateToDetailEmployee(employee) }
     }
 
+    fun refreshData() {
+        getEmployees(idSpecialty)
+    }
+
     private fun getEmployees(id: Long) {
         viewModelScope.launch {
             when (val response = getEmployeesUseCase(id)) {
