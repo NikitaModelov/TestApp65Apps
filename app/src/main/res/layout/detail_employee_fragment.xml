@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="ru.modelov.testapp65apps.detailemployee.presentation.DetailEmployeeViewModel" />
+
+    </data>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Дeтали"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+</layout>

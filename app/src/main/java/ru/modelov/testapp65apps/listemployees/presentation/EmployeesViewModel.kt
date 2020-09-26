@@ -5,6 +5,7 @@ import androidx.lifecycle.*
 import kotlinx.coroutines.launch
 import org.koin.core.KoinComponent
 import ru.modelov.testapp65apps.listemployees.domain.usecase.GetEmployeesUseCase
+import ru.modelov.testapp65apps.main.entities.Employee
 import ru.modelov.testapp65apps.main.entities.Employees
 import ru.modelov.testapp65apps.main.network.Result
 import ru.modelov.testapp65apps.main.presentation.EventsDispatcher
@@ -16,7 +17,9 @@ class EmployeesViewModel(
 ) : ViewModel(), EventsDispatcherOwner<EmployeesViewModel.EventsListener>, LifecycleObserver,
     KoinComponent {
 
-    interface EventsListener
+    interface EventsListener {
+        fun navigateToDetailEmployee(employee: Employee)
+    }
 
     override val eventsDispatcher: EventsDispatcher<EventsListener> = EventsDispatcher()
 
@@ -26,6 +29,10 @@ class EmployeesViewModel(
 
     init {
         getEmployees(idSpecialty)
+    }
+
+    fun onClickEmployee(employee: Employee) {
+        eventsDispatcher.dispatchEvent { navigateToDetailEmployee(employee) }
     }
 
     private fun getEmployees(id: Long) {

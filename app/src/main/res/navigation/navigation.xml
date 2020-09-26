@@ -11,10 +11,19 @@
         android:label="SpecialtiesFragment">
         <action
             android:id="@+id/action_specialties_to_employees"
-            app:destination="@id/employeesFragment"/>
+            app:destination="@id/employeesFragment" />
     </fragment>
     <fragment
         android:id="@+id/employeesFragment"
         android:name="ru.modelov.testapp65apps.listemployees.presentation.EmployeesFragment"
-        android:label="EmployeesFragment" />
+        android:label="EmployeesFragment">
+        <action
+            android:id="@+id/action_employees_to_detail_employee"
+            app:destination="@id/detailEmployeeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailEmployeeFragment"
+        android:name="ru.modelov.testapp65apps.detailemployee.presentation.DetailEmployeeFragment"
+        android:label="DetailEmployeeFragment" />
 </navigation>

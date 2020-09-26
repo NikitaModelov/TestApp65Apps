@@ -1,6 +1,7 @@
 package ru.modelov.testapp65apps.main.entities
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 typealias Employees = List<Employee>
 
@@ -10,4 +11,4 @@ data class Employee(
     @SerializedName("birthday") val birthday: String?,
     @SerializedName("avatr_url") val avatarUrl: String?,
     @SerializedName("specialty") val specialty: List<Specialty>
-)
+) : Serializable
