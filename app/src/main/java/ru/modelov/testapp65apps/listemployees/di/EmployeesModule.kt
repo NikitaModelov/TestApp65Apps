@@ -1,15 +1,21 @@
 package ru.modelov.testapp65apps.listemployees.di
 
+import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import ru.modelov.testapp65apps.listemployees.data.api.EmployeesApi
-import ru.modelov.testapp65apps.listemployees.data.datasource.EmployeesDataSource
+import ru.modelov.testapp65apps.listemployees.data.database.EmployeesDatabase
+import ru.modelov.testapp65apps.listemployees.data.datasource.EmployeesLocalDataSource
+import ru.modelov.testapp65apps.listemployees.data.datasource.EmployeesLocalDataSourceImpl
 import ru.modelov.testapp65apps.listemployees.data.datasource.EmployeesRemoteDataSource
+import ru.modelov.testapp65apps.listemployees.data.datasource.EmployeesRemoteDataSourceImpl
 import ru.modelov.testapp65apps.listemployees.data.repository.EmployeesRepositoryImpl
 import ru.modelov.testapp65apps.listemployees.domain.repository.EmployeesRepository
 import ru.modelov.testapp65apps.listemployees.domain.usecase.GetEmployeesUseCase
 import ru.modelov.testapp65apps.listemployees.presentation.EmployeesViewModel
 import ru.modelov.testapp65apps.main.network.di.createRetrofitService
+import ru.modelov.testapp65apps.main.storage.di.provideDatabase
+import ru.modelov.testapp65apps.main.storage.values.DatabaseName
 
 private val viewModelModule = module {
     viewModel { (id: Long) ->
@@ -20,16 +26,20 @@ private val viewModelModule = module {
 private val repositoryModule = module {
     factory<EmployeesRepository> {
         EmployeesRepositoryImpl(
+            get(),
             get()
         )
     }
 }
 
 private val dataSourceModule = module {
-    single<EmployeesDataSource> {
-        EmployeesRemoteDataSource(
+    single<EmployeesRemoteDataSource> {
+        EmployeesRemoteDataSourceImpl(
             get()
         )
+    }
+    single<EmployeesLocalDataSource> {
+        EmployeesLocalDataSourceImpl(get())
     }
 }
 private val useCaseModule = module {
@@ -40,20 +50,20 @@ private val retrofitModule = module {
     factory { createRetrofitService<EmployeesApi>(get()) }
 }
 
-/*private val databaseModule = module {
+private val databaseModule = module {
     single {
-        provideDatabase<SpecialtiesDatabase>(
+        provideDatabase<EmployeesDatabase>(
             androidContext(),
-            DatabaseName.SPECIALTIES_STORAGE
+            DatabaseName.EMPLOYEES_STORAGE
         )
     }
-}*/
-
+}
 
 val EmployeesModule = listOf(
     viewModelModule,
     repositoryModule,
     dataSourceModule,
     useCaseModule,
+    databaseModule,
     retrofitModule
 )

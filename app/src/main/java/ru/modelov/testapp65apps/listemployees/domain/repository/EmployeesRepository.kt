@@ -5,4 +5,5 @@ import ru.modelov.testapp65apps.main.network.Result
 
 interface EmployeesRepository {
     suspend fun getEmployees(idSpecialty: Long): Result<Employees>
+    suspend fun insertEmployees(employees: Employees)
 }

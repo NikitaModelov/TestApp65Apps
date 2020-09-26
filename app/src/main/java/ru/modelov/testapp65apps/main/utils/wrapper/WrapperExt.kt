@@ -13,8 +13,12 @@ fun MyResponse.getSpecialties(): Specialties {
 
 fun MyResponse.getEmployees(idSpecialty: Long): Employees {
     val employees = this.response
+    return employees.getEmployeesByIdSpecialty(idSpecialty)
+}
+
+fun Employees.getEmployeesByIdSpecialty(idSpecialty: Long): Employees {
     val result = mutableListOf<Employee>()
-    employees.forEach { emp ->
+    this.forEach { emp ->
         emp.specialty.getSpecialtyById(idSpecialty).let {
             if (emp.specialty.contains(it))
                 result.add(emp)

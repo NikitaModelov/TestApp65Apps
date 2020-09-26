@@ -3,6 +3,7 @@ package ru.modelov.testapp65apps.main.entities
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 typealias Specialties = List<Specialty>
 
@@ -14,4 +15,4 @@ data class Specialty(
 
     @SerializedName("name")
     val name: String
-)
+) : Serializable
