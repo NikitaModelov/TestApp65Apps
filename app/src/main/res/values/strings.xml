@@ -1,8 +1,14 @@
 <resources>
     <string name="app_name">TestApp65Apps</string>
-    <string name="employees_age">Возраст: </string>
+
+    <string name="employees_age">Возраст: %s</string>
+    <string name="employee_birthday">Дата рождения: %s</string>
+
+
     <string name="error_network">Ошибка подключения</string>
 
     <string name="detail_employee_general_info">Общая информация</string>
     <string name="detail_employee_specialties">Специальность</string>
+    <string name="specialties_title">Специальности</string>
+    <string name="employees_title">Сотрудники</string>
 </resources>

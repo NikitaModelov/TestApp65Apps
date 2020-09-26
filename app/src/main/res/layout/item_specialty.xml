@@ -30,6 +30,4 @@
             tools:text="Разработчик" />
 
     </androidx.cardview.widget.CardView>
-
-
 </layout>
