@@ -6,7 +6,7 @@
 
         <variable
             name="item"
-            type="ru.modelov.testapp65apps.main.entities.Specialty" />
+            type="ru.modelov.testapp65apps.main.domain.entities.Specialty" />
     </data>
 
     <TextView

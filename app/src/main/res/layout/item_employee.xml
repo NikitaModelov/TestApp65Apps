@@ -11,7 +11,7 @@
 
         <variable
             name="item"
-            type="ru.modelov.testapp65apps.main.entities.Employee" />
+            type="ru.modelov.testapp65apps.main.domain.entities.Employee" />
     </data>
 
     <androidx.cardview.widget.CardView
