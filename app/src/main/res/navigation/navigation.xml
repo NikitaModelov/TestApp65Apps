@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/specialtiesFragment"
-        android:name="ru.modelov.testapp65apps.listspecialties.presentation.SpecialtiesFragment"
+        android:name="ru.modelov.testapp65apps.feature.specialties.list.presentation.SpecialtiesFragment"
         android:label="SpecialtiesFragment">
         <action
             android:id="@+id/action_specialties_to_employees"
@@ -15,7 +15,7 @@
     </fragment>
     <fragment
         android:id="@+id/employeesFragment"
-        android:name="ru.modelov.testapp65apps.listemployees.presentation.EmployeesFragment"
+        android:name="ru.modelov.testapp65apps.feature.employee.listemployees.presentation.EmployeesFragment"
         android:label="EmployeesFragment">
         <action
             android:id="@+id/action_employees_to_detail_employee"
@@ -24,6 +24,6 @@
 
     <fragment
         android:id="@+id/detailEmployeeFragment"
-        android:name="ru.modelov.testapp65apps.detailemployee.presentation.DetailEmployeeFragment"
+        android:name="ru.modelov.testapp65apps.feature.employee.detailemployee.presentation.DetailEmployeeFragment"
         android:label="DetailEmployeeFragment" />
 </navigation>

@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="ru.modelov.testapp65apps.listspecialties.presentation.SpecialtiesViewModel" />
+            type="ru.modelov.testapp65apps.feature.specialties.list.presentation.SpecialtiesViewModel" />
 
         <variable
             name="item"

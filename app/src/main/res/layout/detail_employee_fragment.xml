@@ -8,7 +8,7 @@
 
         <variable
             name="viewModel"
-            type="ru.modelov.testapp65apps.detailemployee.presentation.DetailEmployeeViewModel" />
+            type="ru.modelov.testapp65apps.feature.employee.detailemployee.presentation.DetailEmployeeViewModel" />
 
     </data>
 

@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="ru.modelov.testapp65apps.listemployees.presentation.EmployeesViewModel" />
+            type="ru.modelov.testapp65apps.feature.employee.listemployees.presentation.EmployeesViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
@@ -61,7 +61,8 @@
                 app:onRefresh="@{viewModel::refreshData}"
                 android:layout_height="match_parent">
 
-                <androidx.recyclerview.widget.RecyclerView
+
+            <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rv_employees"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

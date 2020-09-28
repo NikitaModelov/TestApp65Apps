@@ -3,7 +3,7 @@ package ru.modelov.testapp65apps.main.domain.entities
 import androidx.room.Entity
 import androidx.room.TypeConverters
 import com.google.gson.annotations.SerializedName
-import ru.modelov.testapp65apps.listspecialties.data.database.converter.SpecialtiesConverter
+import ru.modelov.testapp65apps.feature.specialties.list.data.database.converter.SpecialtiesConverter
 import java.io.Serializable
 
 typealias Employees = List<Employee>
