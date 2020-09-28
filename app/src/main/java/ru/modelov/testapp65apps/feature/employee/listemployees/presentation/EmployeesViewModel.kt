@@ -20,6 +20,7 @@ class EmployeesViewModel(
 
     interface EventsListener {
         fun navigateToDetailEmployee(employee: Employee)
+        fun navigateToBack()
     }
 
     override val eventsDispatcher: EventsDispatcher<EventsListener> = EventsDispatcher()
@@ -42,6 +43,10 @@ class EmployeesViewModel(
 
     fun refreshData() {
         getEmployees(idSpecialty)
+    }
+
+    fun navigateToBack() {
+        eventsDispatcher.dispatchEvent { navigateToBack() }
     }
 
     private fun getEmployees(id: Long) {

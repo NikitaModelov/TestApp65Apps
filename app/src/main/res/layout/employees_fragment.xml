@@ -37,6 +37,7 @@
                         android:id="@+id/iv_back_arrow"
                         android:layout_width="28dp"
                         android:layout_height="28dp"
+                        android:onClick="@{() -> viewModel.navigateToBack()}"
                         android:src="@drawable/ic_baseline_keyboard_backspace_24" />
 
                     <TextView

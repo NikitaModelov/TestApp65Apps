@@ -57,4 +57,8 @@ class EmployeesFragment : BaseFragment<EmployeesFragmentBinding>(R.layout.employ
             bundleOf(EMPLOYEE_KEY to employee)
         )
     }
+
+    override fun navigateToBack() {
+        findNavController().popBackStack()
+    }
 }
